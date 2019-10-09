@@ -1,10 +1,10 @@
-package Pages;
+package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import BaseClass.BaseClass;
+import baseClass.BaseClass;
 
 public class LoginPage extends BaseClass {
 	
