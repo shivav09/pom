@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="suite [Default suite]">
+
+<listeners>
+		<listener class-name="Utils.ExtentReportNg" />
+	</listeners>
   <test thread-count="5" name="Default test">
     <classes>
+      <class name="tests.LoginTest" />
+      <class name="tests.LandingTest" />
       <class name="tests.ContactTest">
       </class> 
     </classes>

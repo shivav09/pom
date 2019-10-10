@@ -20,7 +20,7 @@ public class ContactPage extends BaseClass {
 	@FindBy(xpath = "//input[@placeholder='Number']")
 	private WebElement phoneNo;
 
-	@FindBy(xpath = "//button[text()='Save']")
+	@FindBy(xpath = "//button[text()='ave']")
 	private WebElement saveBtn;
 
 	@FindBy(xpath = "//button[text()='New']")
