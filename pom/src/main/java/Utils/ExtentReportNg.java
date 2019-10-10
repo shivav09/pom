@@ -17,12 +17,14 @@ public class ExtentReportNg extends BaseClass implements ITestListener {
 	public ExtentReports extent;
 	public ExtentTest extentTest;
 	public Utilities utils;
+	public SendEmailWithAttachment sendEmail;
 
 	@Override
 	public void onFinish(ITestContext arg0) {
 		// TODO Auto-generated method stub
 		extent.flush();
 		extent.close();
+		sendEmail.sendEmail();
 
 	}
 
@@ -30,6 +32,7 @@ public class ExtentReportNg extends BaseClass implements ITestListener {
 	public void onStart(ITestContext arg0) {
 		// TODO Auto-generated method stub
 		utils = new Utilities();
+		sendEmail = new SendEmailWithAttachment();
 		extent = new ExtentReports(System.getProperty("user.dir") + "/test-output/ExtentReport.html", true);
 		extent.addSystemInfo("Host Name", "Shiva Vallabhaneni");
 		extent.addSystemInfo("User Name", "shivav09");
