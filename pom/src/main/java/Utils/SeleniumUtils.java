@@ -20,7 +20,7 @@ public class SeleniumUtils {
 
 	public SeleniumUtils(WebDriver dvr) {
 		driver = dvr;
-		actions = new Actions(driver);
+
 	}
 
 	public void pageLoadTime(long time) {
@@ -35,9 +35,9 @@ public class SeleniumUtils {
 		return driver.findElements(By.xpath(path));
 	}
 
-	public void waitForElement(int sec) {
+	public void waitForElement(long millis) {
 		try {
-			Thread.sleep(sec);
+			Thread.sleep(millis);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -45,10 +45,12 @@ public class SeleniumUtils {
 	}
 
 	public void mouseHoverAndClick(WebElement moveTo, WebElement clickElement) {
+		actions = new Actions(driver);
 		actions.moveToElement(moveTo).click(clickElement).build().perform();
 	}
 
 	public void mouseHoverOnElement(WebElement element) {
+		actions = new Actions(driver);
 		actions.moveToElement(element).build().perform();
 	}
 
@@ -86,6 +88,7 @@ public class SeleniumUtils {
 	}
 
 	public void clickOnTabKey() {
+		actions = new Actions(driver);
 		actions.sendKeys(Keys.TAB).perform();
 	}
 

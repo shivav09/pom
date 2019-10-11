@@ -26,6 +26,9 @@ public class ContactPage extends BaseClass {
 	@FindBy(xpath = "//button[text()='New']")
 	private WebElement addBtn;
 
+	@FindBy(xpath = "//div[text()='Contacts']")
+	private WebElement contactsScreen;
+
 	public ContactPage() {
 		PageFactory.initElements(driver, this);
 	}
@@ -34,12 +37,21 @@ public class ContactPage extends BaseClass {
 		addBtn.click();
 	}
 
+	public Boolean verifyContctsScreen() {
+		return contactsScreen.isDisplayed();
+	}
+
 	public void addNewContact(String fName, String lName, String email, String phoneNum) {
-		firstName.sendKeys(fName);
-		lastName.sendKeys(lName);
-		emailId.sendKeys(email);
-		phoneNo.sendKeys(phoneNum);
-		saveBtn.click();
+		try {
+			firstName.sendKeys(fName);
+			lastName.sendKeys(lName);
+			emailId.sendKeys(email);
+			phoneNo.sendKeys(phoneNum);
+			saveBtn.click();
+			waitForElement(500);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

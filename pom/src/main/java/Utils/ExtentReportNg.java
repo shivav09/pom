@@ -24,7 +24,7 @@ public class ExtentReportNg extends BaseClass implements ITestListener {
 		// TODO Auto-generated method stub
 		extent.flush();
 		extent.close();
-		sendEmail.sendEmail();
+		// sendEmail.sendEmail();
 
 	}
 

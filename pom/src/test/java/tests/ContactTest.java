@@ -2,6 +2,7 @@ package tests;
 
 import java.io.IOException;
 
+import org.apache.log4j.Logger;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -23,6 +24,7 @@ public class ContactTest extends BaseClass {
 	public static LoginPage loginPage;
 	public static ContactPage contactPage;
 	public static ExcelData excelData;
+	Logger log = Logger.getLogger(ContactTest.class);
 
 	@BeforeTest
 	public void setUp() {
@@ -52,7 +54,7 @@ public class ContactTest extends BaseClass {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+			log.error("Error in adding new contact");
 			e.printStackTrace();
 		}
 	}

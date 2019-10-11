@@ -21,6 +21,7 @@ public class LoginTest extends BaseClass {
 	public void loginToCrm() {
 		loginPage.navigateToLoginPage();
 		loginPage.login(prop.getProperty("userName"), prop.getProperty("password"));
+		waitForElement(2);
 
 	}
 
